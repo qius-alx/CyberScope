@@ -16,7 +16,7 @@ An extensible OSINT framework for security researchers, built in Python.
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/qius-alx/osint-framework.git
+    git clone https://github.com/user/osint-framework.git
     cd osint-framework
     ```
 

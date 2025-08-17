@@ -27,6 +27,13 @@ Repository = "https://github.com/user/osint-framework"
 [project.scripts]
 osint = "osint.app:main"
 
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+    "pytest-mock>=3.7.0",
+    "flake8>=5.0.4",
+]
+
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "-ra -q"

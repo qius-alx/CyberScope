@@ -29,3 +29,7 @@ python-whois>=0.8.0
 # jinja2>=3.0.0
 # reportlab>=3.6.8
 # weasyprint>=54.0
+
+# Testing
+pytest>=7.0.0
+pytest-mock>=3.7.0
