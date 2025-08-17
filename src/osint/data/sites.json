@@ -1,0 +1,29 @@
+{
+  "GitHub": {
+    "url": "https://github.com/{}",
+    "error_type": "status_code"
+  },
+  "Twitter": {
+    "url": "https://twitter.com/{}",
+    "error_type": "message",
+    "error_msg": "This account doesn’t exist"
+  },
+  "Instagram": {
+    "url": "https://www.instagram.com/{}",
+    "error_type": "status_code"
+  },
+  "Reddit": {
+    "url": "https://www.reddit.com/user/{}",
+    "error_type": "message",
+    "error_msg": "Sorry, nobody on Reddit goes by that name."
+  },
+  "HackerNews": {
+    "url": "https://news.ycombinator.com/user?id={}",
+    "error_type": "message",
+    "error_msg": "No such user."
+  },
+  "Pinterest": {
+    "url": "https://www.pinterest.com/{}",
+    "error_type": "status_code"
+  }
+}

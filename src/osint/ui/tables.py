@@ -3,12 +3,13 @@ from typing import List, Optional
 
 from rich.console import Console
 from rich.table import Table
+from osint.core.report import report_manager
 
 console = Console()
 
 def print_table(title: str, headers: List[str], rows: List[List[str]], show_header: bool = True):
     """
-    Prints a formatted table to the console using rich.
+    Prints a formatted table to the console using rich and stores the data for exporting.
 
     Args:
         title (str): The title of the table.
@@ -35,3 +36,6 @@ def print_table(title: str, headers: List[str], rows: List[List[str]], show_head
         table.add_row(*str_row)
 
     console.print(table)
+
+    # Store the data for potential export
+    report_manager.add_table(title=title, headers=headers, rows=rows)

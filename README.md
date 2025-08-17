@@ -25,19 +25,66 @@ An extensible OSINT framework for security researchers, built in Python.
     make install
     ```
 
-## Quick Start
+## Usage
 
-Here are a few examples to get you started:
+The base command is `osint`. You can see all available commands by running `osint --help`.
+Each module is available as a subcommand.
 
-- **Domain Investigation**:
-  ```bash
-  osint domain --name example.com --whois --dns
-  ```
+### Domain Investigation
+Investigate a domain for WHOIS and DNS information.
+```bash
+# Run all domain checks
+osint domain --name example.com
 
-- **IP Investigation (coming soon)**:
-  ```bash
-  osint ip --ip 8.8.8.8
-  ```
+# Run only WHOIS lookup
+osint domain --name example.com --whois
+
+# Run only DNS lookup and export to JSON
+osint domain --name example.com --dns --export json
+```
+
+### IP Investigation
+Investigate an IP address for ASN, geolocation, and open ports.
+```bash
+# Run ASN and Geolocation lookups
+osint ip --address 8.8.8.8
+
+# Scan a range of ports
+osint ip --address 8.8.8.8 --ports 80-1024
+```
+
+### Web Scraping
+Scrape a URL for information and check for historical archives.
+```bash
+# Scrape a page for emails, phones, links, etc.
+osint web --url https://example.com --scrape
+
+# Check for Wayback Machine archives
+osint web --url https://example.com --wayback
+```
+
+### Email Investigation
+Investigate an email address for associated DNS records and data breaches.
+```bash
+# Check DNS and HIBP (requires HIBP_API_KEY in .env)
+osint email --address test@example.com
+```
+
+### Shodan Search
+Search Shodan for devices and services (requires SHODAN_API_KEY in .env).
+```bash
+osint shodan --query "apache country:US" --limit 50
+```
+
+### File Analysis
+Analyze local files for metadata and hashes.
+```bash
+# Analyze a single file
+osint files --path ./my_image.jpg --exif --hash
+
+# Analyze all files in a directory
+osint files --path ./my_documents/
+```
 
 ## Configuration
 
